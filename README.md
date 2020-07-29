@@ -1,11 +1,11 @@
 # IoMBian Status Display
 
-This service displays device status info in a ePaper display ([Waveshare 2.13 e-Paper HAT](https://www.waveshare.com/product/displays/e-paper/epaper-3/2.13inch-e-paper-hat.htm)).
+This service displays device status info on a ePaper display ([Waveshare 2.13 e-Paper HAT](https://www.waveshare.com/product/displays/e-paper/epaper-3/2.13inch-e-paper-hat.htm)).
 
 The following information is shown:
 
 - Hostname
-- Storage (free, total and percent)
+- Storage (used, total and percent)
 - Local network connection status (ip address for each interface)
 - Internet connection status
 
