@@ -1,0 +1,14 @@
+[Unit]
+Description=IoMBian Status Display
+
+[Service]
+Type=simple
+User=iompi
+Restart=always
+RestartSec=5
+
+WorkingDirectory=/opt/iombian-status-display
+ExecStart=/opt/iombian-status-display/venv/bin/python /opt/iombian-status-display/main.py
+
+[Install]
+WantedBy=multi-user.target
