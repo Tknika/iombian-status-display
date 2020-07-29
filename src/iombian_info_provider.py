@@ -17,7 +17,7 @@ class IoMBianInfoProvider(GenericInfoProvider):
         #self.system_time = None
         #self.uptime = None
         self.total_disk = None
-        self.free_disk = None
+        self.used_disk = None
         self.percent_disk = None
         self.local_network = None
         self.internet_status = None
@@ -29,7 +29,7 @@ class IoMBianInfoProvider(GenericInfoProvider):
         #self.uptime = self.__process_uptime(psutil.boot_time())
         disk_usage = psutil.disk_usage("/")
         self.total_disk = float("{:.1f}".format(disk_usage.total / (10**9)))
-        self.free_disk = float("{:.1f}".format(disk_usage.free / (10**9)))
+        self.used_disk = float("{:.1f}".format(disk_usage.used / (10**9)))
         self.percent_disk = float("{:.0f}".format(disk_usage.percent))
         self.local_network = self.__process_local_network(psutil.net_if_addrs())
         self.internet_status = self.__check_internet_connection()
@@ -40,7 +40,7 @@ class IoMBianInfoProvider(GenericInfoProvider):
         info = []
         info.append("Host: {}".format(self.hostname))
         #info.append("Time: {} (Uptime: {})".format(self.system_time, self.uptime))
-        info.append("Storage: {}/{}GB ({} %)".format(self.free_disk, self.total_disk, self.percent_disk))
+        info.append("Storage: {}/{}GB ({} %)".format(self.used_disk, self.total_disk, self.percent_disk))
         info.append("Network: {}".format("Connected" if self.local_network["status"] else "Not connected"))
         for key, value in self.local_network["interfaces"].items():
             info.append("    {}: {}".format(key, value))
