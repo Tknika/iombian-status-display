@@ -14,8 +14,8 @@ class IoMBianInfoProvider(GenericInfoProvider):
 
     def __init__(self):
         self.hostname = None
-        #self.system_time = None
-        #self.uptime = None
+        self.system_time = None
+        self.uptime = None
         self.total_disk = None
         self.used_disk = None
         self.percent_disk = None
@@ -25,8 +25,8 @@ class IoMBianInfoProvider(GenericInfoProvider):
     def update(self):
         self.has_changed = False
         self.hostname = platform.node()
-        #self.system_time = time.strftime('%H:%M')
-        #self.uptime = self.__process_uptime(psutil.boot_time())
+        self.system_time = time.strftime('%H:%M')
+        self.uptime = self.__process_uptime(psutil.boot_time())
         disk_usage = psutil.disk_usage("/")
         self.total_disk = float("{:.1f}".format(disk_usage.total / (10**9)))
         self.used_disk = float("{:.1f}".format(disk_usage.used / (10**9)))
@@ -39,7 +39,7 @@ class IoMBianInfoProvider(GenericInfoProvider):
     def to_list(self):
         info = []
         info.append("Host: {}".format(self.hostname))
-        #info.append("Time: {} (Uptime: {})".format(self.system_time, self.uptime))
+        info.append("Time: {} (Uptime: {})".format(self.system_time, self.uptime))
         info.append("Storage: {}/{}GB ({} %)".format(self.used_disk, self.total_disk, self.percent_disk))
         info.append("Network: {}".format("Connected" if self.local_network["status"] else "Not connected"))
         for key, value in self.local_network["interfaces"].items():
@@ -68,8 +68,8 @@ class IoMBianInfoProvider(GenericInfoProvider):
         except socket.error:
             return False
 
-    def __process_uptime(self, uptime):
-        uptime_sec = uptime / 1000.0
+    def __process_uptime(self, boot_time):
+        uptime_sec = time.time() - boot_time
         uptime = "now"
         if uptime_sec > 86400: # Day
             uptime = "{:.1f}d".format(uptime_sec/86400)
