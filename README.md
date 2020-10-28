@@ -2,8 +2,8 @@
 
 This service displays device status info on different displays (check each link for more detailed information):
 
-- [TFT 1.77 display](./src/edp_display/README.md)
-- [ePaper 2.13 display](./src/st7735_display/README.md)
+- [TFT 1.77 display](./src/st7735_display/README.md)
+- [ePaper 2.13 display](./src/edp_display/README.md)
 
 The following information is shown:
 

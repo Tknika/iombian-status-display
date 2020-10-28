@@ -2,7 +2,7 @@
 
 This module displays device status info on a ePaper display ([Waveshare 2.13 e-Paper HAT](https://www.waveshare.com/product/displays/e-paper/epaper-3/2.13inch-e-paper-hat.htm)).
 
-[<img src="../../docs/epaper-2.13.jpg" width="600"/>](./docs/iombian-status-display.jpg)
+[<img src="../../docs/epaper-2.13.jpg" width="600"/>](../../docs/epaper-2.13.jpg)
 
 ## Display connection
 

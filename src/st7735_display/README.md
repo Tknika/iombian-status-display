@@ -2,7 +2,7 @@
 
 This module displays device status info on a ST7735 display ([1.77 128x160 TFT](https://www.winstar.com.tw/es/products/tft-lcd/module/tft-st7735.html)).
 
-[<img src="../../docs/tft-1.77.jpg" width="600"/>](./docs/iombian-status-display.jpg)
+[<img src="../../docs/tft-1.77.jpg" width="600"/>](../../docs/tft-1.77.jpg)
 
 ## Display connection
 
