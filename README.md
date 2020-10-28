@@ -1,34 +1,21 @@
 # IoMBian Status Display
 
-This service displays device status info on a ePaper display ([Waveshare 2.13 e-Paper HAT](https://www.waveshare.com/product/displays/e-paper/epaper-3/2.13inch-e-paper-hat.htm)).
+This service displays device status info on different displays (check each link for more detailed information):
+
+- [TFT 1.77 display](./src/edp_display/README.md)
+- [ePaper 2.13 display](./src/st7735_display/README.md)
 
 The following information is shown:
 
 - Hostname
+- Time and updatime
 - Storage (used, total and percent)
 - Local network connection status (ip address for each interface)
 - Internet connection status
 
-[<img src="./docs/iombian-status-display.jpg" width="600"/>](./docs/iombian-status-display.jpg)
-
-## Display connection
-
-The Waveshare 2.13 e-Paper display uses the SPI protocol to communicate with the board. The connection with the Raspberry Pi should be done using the following table ([source](https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT)):
-
-| e-Paper | Raspberry PI |
-|:-------:|:------------:|
-|   VCC   |   1 (3.3V)   |
-|   GND   |    9 (GND)   |
-|   DIN   |      19      |
-|   CLK   |      23      |
-|    CS   |      24      |
-|    DC   |      22      |
-|   RST   |      11      |
-|   BUSY  |      18      |
-
 ## Installation
 
-> Warning: SPI should be first enabled in the board! (raspi-config) 
+> Warning: SPI and I2C should be first enabled in the board! (raspi-config) 
 
 - Clone the repo into a temp folder:
 
@@ -50,7 +37,7 @@ The Waveshare 2.13 e-Paper display uses the SPI protocol to communicate with the
 
 > ```cd /opt/iombian-status-display```
 
-> ```sudo apt install python3-dev```
+> ```sudo apt install python3-dev python3-pil ttf-dejavu libopenjp2-7```
 
 > ```python3 -m venv venv```
 
