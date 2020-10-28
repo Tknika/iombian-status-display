@@ -3,3 +3,5 @@ RPi.GPIO
 spidev
 numpy
 Pillow
+adafruit-circuitpython-rgb-display
+adafruit-blinka
