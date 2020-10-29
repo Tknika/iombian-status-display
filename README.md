@@ -37,7 +37,7 @@ The following information is shown:
 
 > ```cd /opt/iombian-status-display```
 
-> ```sudo apt install -y python3-dev python3-pil ttf-dejavu libopenjp2-7```
+> ```sudo apt install -y python3-venv python3-dev python3-pil ttf-dejavu libopenjp2-7```
 
 > ```python3 -m venv venv```
 
