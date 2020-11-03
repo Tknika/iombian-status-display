@@ -15,6 +15,6 @@ The TFT 1.77 display uses the SPI protocol to communicate with the board. The co
 |  3 (SCK)      | SCK/CLK       | 23 (GPIO11)   |
 |  4 (SDA)      |   MOSI        | 19 (GPIO21)   |
 |  5 (RES)      |   RST         | 18 (GPIO24)   |
-|  6 (RS)       |   D/C         | 16 (GPIO23)   |
+|  6 (RS)       |   D/C         | 22 (GPIO25)   |
 |  7 (CS)       |    CS         |  24 (GPIO8)   |
 | 8 (LEDA)      |  BLight       |  1 (3.3VCD)   |
