@@ -43,7 +43,7 @@ class ST7735Controller(object):
         image = Image.new("RGB", (self.display_width, self.display_height))
 
         draw = ImageDraw.Draw(image)
-        draw.rectangle((0, 0, self.display_width, self.display_height), fill=(255, 255, 255))
+        draw.rectangle((0, 0, self.display_width, self.display_height), fill=(0, 0, 0))
         self.display.image(image)
 
     def render(self, lines):
